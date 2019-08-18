@@ -1,0 +1,9 @@
+
+.DS_Store
+.cache
+.config/*
+.ipython/*
+.jupyter*
+.local/*
+.npm/*
+/env/*

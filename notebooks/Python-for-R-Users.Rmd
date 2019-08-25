@@ -4,15 +4,25 @@ output: html_notebook
 author: "Sylvia Tran"
 date: "2019 Sep 19"
 
-
----
------------
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
 Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+---
+-----------
+ "[GitHub Reference](https://github.com/godsylla/python-for-R-users/)"
+
+### Introduction
 [Github Reference](https://github.com/godsylla/python-for-R-users/)
+
+![R-and-Python...sitting in a tree](../assets/python-are-r-friends.png)
+
+
 
 This notebook is a tutorial on Python for R Users. The intention is to help draw some similarities between Python and R in the hope that those new to Python will find it less initmidating, and overall more approachable. This notebook was done using R Studio. 
 
@@ -31,16 +41,43 @@ Additional Resources can be found here:
   - [Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
   - [Scikit Learn - More Documentation](https://scikit-learn.org/stable/index.html)
   
+  
+### Table of Contents
+  1. Load Packages
+  2. Loading Toy Datasets (sklearn)
+  3. Cursory Inspection (pandas & numpy)
+  4. Light Cleaning (base python, pandas)
+  5. Train-test-split (sklearn)
+  6. Feature Scaling (sklearn)
+  7. Model (sklearn)
+  8. Model Evaluation (sklearn)
+  
+#### Before we Begin, we need this:
+```{r}
+library(reticulate)
+```
+  
+#### Loading Packages
+```{python}
+# Conventional nicknames for pandas and numpy 
+import pandas as pd
+import numpy as np
 
+# Only loaded select libraries within sklearn (because sklearn is HhuuuUUUUuuuuuugE~~!!!)
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import r2_score, mean_squared_error
+```
+
+#### Loading Toy Datasets
+Like R, Python has a number of toy datasets available through scikit learn. 
+We'll be using the boston housing dataset (despite how dull and unexciting it is) because it holds a mix of categorical and numeric features. 
 ```{r}
 plot(cars)
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
-
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
 ```{python}
 import numpy as np

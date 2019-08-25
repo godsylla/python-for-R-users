@@ -1,0 +1,52 @@
+---
+title: "Python for R Users Notebook"
+output: html_notebook
+author: "Sylvia Tran"
+date: "2019 Sep 19"
+
+
+---
+-----------
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+
+[Github Reference](https://github.com/godsylla/python-for-R-users/)
+
+This notebook is a tutorial on Python for R Users. The intention is to help draw some similarities between Python and R in the hope that those new to Python will find it less initmidating, and overall more approachable. This notebook was done using R Studio. 
+
+However, should the user so wish, there is also an attached Python notebook (.ipynb) in the repository that is available to run in Jupyter Notebook (using Anaconda for e.g.) that uses a Python3 kernel. Additionally, there is an attached python script (python-for-r-users.py) that contains the code without any of the markdown cells.
+
+The content covered will leverage the following packages:
+
+  - [pandas](https://pandas.pydata.org/pandas-docs/stable/) (for data frame shaping, cleaning)
+  - [numpy](https://docs.scipy.org/doc/numpy/reference/index.html) (for any numeric python required)
+  - [scikit learn](https://scikit-learn.org/stable/user_guide.html) (for train-test-splitting, feature-scaling, modeling, model metrics)
+
+Should you wish to explore these packages more, please refer to the documentation online. There are ample examples for each as these three are widely used in the field of data science and data analysis. Notably, when using Python, numpy, pandas, or scikit learn for data analysis or data science, please take care to read documentation carefully as there are at times nuanced differences with regard to what is happening in the source code that might result in different than expected behavior when implementing same/similar tasks in R. 
+
+Additional Resources can be found here:
+
+  - [Numpy Tutorial](http://cs231n.github.io/python-numpy-tutorial/)
+  - [Scikit Learn - More Documentation](https://scikit-learn.org/stable/index.html)
+  
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+```{python}
+import numpy as np
+import pandas as pd
+```
+```{python}
+
+```
+

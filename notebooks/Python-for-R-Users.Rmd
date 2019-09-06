@@ -61,7 +61,19 @@ Additional Resources can be found here:
    
 ```{r setup, include=TRUE}
 library(reticulate)
-use_python('/Users/sylviatran/anaconda3/bin/python')
+use_python('/usr/bin/python')
+
+# Create a new conda environment
+conda_list()
+# conda_create('r-reticulate')
+
+# Install pandas
+conda_install('r-reticulate', 'pandas')
+pandas <- import ('pandas')
+
+# Install numpy
+conda_install('r-reticulate', 'numpy')
+numpy <- import ('numpy')
 ```
   
 
@@ -76,7 +88,6 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import r2_score, mean_squared_error
-
 ```
 
 #### Loading Toy Datasets

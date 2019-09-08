@@ -14048,9 +14048,9 @@ memory usage: 150.3+ KB
 <span class="n">dummies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">beers_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;brewery_id&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> 
                             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;style&#39;</span><span class="p">])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">dummies_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
-<span class="n">X</span> <span class="o">=</span> <span class="n">dummies_df</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dummies_df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;abv&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
-<span class="n">y</span> <span class="o">=</span> <span class="n">beers_df</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">dummies_df</span><span class="p">[</span><span class="s1">&#39;abv&#39;</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -14272,10 +14272,10 @@ memory usage: 150.3+ KB
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>X train shape:  (1803, 102)
+<pre>X train shape:  (1803, 101)
 y train shape:  (1803,)
  
-X test shape:  (602, 102)
+X test shape:  (602, 101)
 y test shape:  (602,)
 </pre>
 </div>
@@ -14293,6 +14293,9 @@ y test shape:  (602,)
 <ul>
 <li><a href="https://scikit-learn.org/stable/tutorial/statistical_inference/putting_together.html">https://scikit-learn.org/stable/tutorial/statistical_inference/putting_together.html</a></li>
 </ul>
+<p>This portion of the presentation's gonna go like this: 
+<img src="https://media.giphy.com/media/ZzvmSrCZS7uco/giphy.gif" alt=""></p>
+<p><strong>Note: The below code is only to demonstrate how to use sklearn, not for minimizing loss.</strong></p>
 
 </div>
 </div>
@@ -14372,8 +14375,8 @@ y test shape:  (602,)
 <div class="prompt input_prompt">In&nbsp;[19]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best estimator: &#39;</span> <span class="p">,</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best parameters: &#39;</span><span class="p">,</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best estimator: &#39;</span> <span class="p">,</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best parameters: &#39;</span><span class="p">,</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_params_</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;best score: &#39;</span><span class="p">,</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
 </pre></div>
 
@@ -14397,9 +14400,9 @@ y test shape:  (602,)
            min_impurity_decrease=0.0, min_impurity_split=None,
            min_samples_leaf=1, min_samples_split=2,
            min_weight_fraction_leaf=0.0, n_estimators=20, n_jobs=1,
-           oob_score=False, random_state=42, verbose=0, warm_start=False))])
-best parameters:  {&#39;rfreg__n_estimators&#39;: 20}
-best score:  0.9974089930841255
+           oob_score=False, random_state=42, verbose=0, warm_start=False))])  
+best parameters:  {&#39;rfreg__n_estimators&#39;: 20}  
+best score:  0.5099904012863419
 </pre>
 </div>
 </div>
@@ -14410,7 +14413,7 @@ best score:  0.9974089930841255
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Inspect all cross-validated results and convert to a DataFrame </span>
@@ -14428,7 +14431,7 @@ best score:  0.9974089930841255
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[20]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -14459,27 +14462,27 @@ best score:  0.9974089930841255
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.0550914</td>
-      <td>0.0719749</td>
-      <td>0.0707038</td>
+      <td>0.122183</td>
+      <td>0.170782</td>
+      <td>0.179299</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.00325792</td>
-      <td>0.00784502</td>
-      <td>0.00496598</td>
+      <td>0.00768792</td>
+      <td>0.0111142</td>
+      <td>0.0171796</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.00293784</td>
-      <td>0.00327663</td>
-      <td>0.00247102</td>
+      <td>0.00326614</td>
+      <td>0.00352864</td>
+      <td>0.00279737</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.000163468</td>
-      <td>0.000772971</td>
-      <td>0.00033908</td>
+      <td>0.000141773</td>
+      <td>0.000728061</td>
+      <td>0.000135058</td>
     </tr>
     <tr>
       <th>param_rfreg__n_estimators</th>
@@ -14495,45 +14498,45 @@ best score:  0.9974089930841255
     </tr>
     <tr>
       <th>split0_test_score</th>
-      <td>0.999469</td>
-      <td>0.999458</td>
-      <td>0.999473</td>
+      <td>0.480426</td>
+      <td>0.481119</td>
+      <td>0.475745</td>
     </tr>
     <tr>
       <th>split1_test_score</th>
-      <td>0.999959</td>
-      <td>0.999951</td>
-      <td>0.999947</td>
+      <td>0.493435</td>
+      <td>0.50101</td>
+      <td>0.508492</td>
     </tr>
     <tr>
       <th>split2_test_score</th>
-      <td>0.997722</td>
-      <td>0.998357</td>
-      <td>0.998672</td>
+      <td>0.55565</td>
+      <td>0.568178</td>
+      <td>0.567029</td>
     </tr>
     <tr>
       <th>split3_test_score</th>
-      <td>0.999858</td>
-      <td>0.999845</td>
-      <td>0.999788</td>
+      <td>0.489246</td>
+      <td>0.503648</td>
+      <td>0.508428</td>
     </tr>
     <tr>
       <th>split4_test_score</th>
-      <td>0.988837</td>
-      <td>0.989212</td>
-      <td>0.989149</td>
+      <td>0.517093</td>
+      <td>0.494875</td>
+      <td>0.490199</td>
     </tr>
     <tr>
       <th>mean_test_score</th>
-      <td>0.997172</td>
-      <td>0.997368</td>
-      <td>0.997409</td>
+      <td>0.507174</td>
+      <td>0.509778</td>
+      <td>0.50999</td>
     </tr>
     <tr>
       <th>std_test_score</th>
-      <td>0.00424088</td>
-      <td>0.00411235</td>
-      <td>0.0041492</td>
+      <td>0.0271178</td>
+      <td>0.0302419</td>
+      <td>0.0310701</td>
     </tr>
     <tr>
       <th>rank_test_score</th>
@@ -14543,45 +14546,45 @@ best score:  0.9974089930841255
     </tr>
     <tr>
       <th>split0_train_score</th>
-      <td>0.999092</td>
-      <td>0.999484</td>
-      <td>0.999628</td>
+      <td>0.804413</td>
+      <td>0.811428</td>
+      <td>0.815937</td>
     </tr>
     <tr>
       <th>split1_train_score</th>
-      <td>0.999662</td>
-      <td>0.999751</td>
-      <td>0.999791</td>
+      <td>0.801046</td>
+      <td>0.807018</td>
+      <td>0.8108</td>
     </tr>
     <tr>
       <th>split2_train_score</th>
-      <td>0.999082</td>
-      <td>0.999328</td>
-      <td>0.999442</td>
+      <td>0.790899</td>
+      <td>0.798025</td>
+      <td>0.801123</td>
     </tr>
     <tr>
       <th>split3_train_score</th>
-      <td>0.999176</td>
-      <td>0.99912</td>
-      <td>0.999209</td>
+      <td>0.790643</td>
+      <td>0.791106</td>
+      <td>0.793861</td>
     </tr>
     <tr>
       <th>split4_train_score</th>
-      <td>0.999921</td>
-      <td>0.999943</td>
-      <td>0.999948</td>
+      <td>0.801714</td>
+      <td>0.800536</td>
+      <td>0.803236</td>
     </tr>
     <tr>
       <th>mean_train_score</th>
-      <td>0.999387</td>
-      <td>0.999525</td>
-      <td>0.999603</td>
+      <td>0.797743</td>
+      <td>0.801622</td>
+      <td>0.804991</td>
     </tr>
     <tr>
       <th>std_train_score</th>
-      <td>0.000341992</td>
-      <td>0.000293342</td>
-      <td>0.000259316</td>
+      <td>0.00580361</td>
+      <td>0.00707075</td>
+      <td>0.00768762</td>
     </tr>
   </tbody>
 </table>
@@ -14596,7 +14599,53 @@ best score:  0.9974089930841255
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Get feature importances</span>
+<span class="n">feat_imptc</span> <span class="o">=</span> <span class="n">gs_obj</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;rfreg&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">feature_importances_</span>
+
+<span class="c1"># Zip w/ column names &amp; sort, display top 10</span>
+<span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feat_imptc</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">columns</span><span class="p">)),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[(0.3872775325556909, &#39;ibu&#39;),
+ (0.12343409124864957, &#39;style_American Double / Imperial IPA&#39;),
+ (0.055605945922409486, &#39;ounces&#39;),
+ (0.036116643290090074, &#39;style_American IPA&#39;),
+ (0.03243970476519702, &#39;style_Tripel&#39;),
+ (0.02940026412638163, &#39;style_American Double / Imperial Stout&#39;),
+ (0.0276345369639348, &#39;style_Quadrupel (Quad)&#39;),
+ (0.021941061398495918, &#39;style_Russian Imperial Stout&#39;),
+ (0.015628040366609898, &#39;style_Scotch Ale / Wee Heavy&#39;),
+ (0.014483013538822526, &#39;style_Winter Warmer&#39;)]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># mse for test (validation) data</span>
@@ -14614,13 +14663,13 @@ best score:  0.9974089930841255
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[21]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>0.9933892917976936</pre>
+<pre>0.5198763128313273</pre>
 </div>
 
 </div>

@@ -13282,7 +13282,6 @@ a.anchor-link {
 <li>Train-test-split (sklearn)</li>
 <li>Feature Scaling (sklearn)</li>
 <li>Model (sklearn)</li>
-<li>Model Evaluation (sklearn)</li>
 </ol>
 
 </div>
@@ -14044,7 +14043,7 @@ memory usage: 150.3+ KB
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Separate target from features</span>
 <span class="n">dummies_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">get_dummies</span><span class="p">(</span><span class="n">beers_df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;brewery_id&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> 
                             <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;style&#39;</span><span class="p">])</span>
 <span class="n">display</span><span class="p">(</span><span class="n">dummies_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
@@ -14288,7 +14287,7 @@ y test shape:  (602,)
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="5-&amp;-6.-Feature-Scaling-&amp;-Modeling">5 &amp; 6. Feature Scaling &amp; Modeling<a class="anchor-link" href="#5-&amp;-6.-Feature-Scaling-&amp;-Modeling">&#182;</a></h3><p>Note: there are nuanced differences between very similar package functions in R vs. Python's sklearn. Please make sure you are reading the documentation for the respective package thoroughly to understand what's happening when you use them. <strong>Some of these nuanced differences explain why you'll get very different results using R's caret &amp; various models vs. Python's sklearn package.</strong></p>
+<h3 id="6-&amp;-7.-Feature-Scaling-&amp;-Modeling">6 &amp; 7. Feature Scaling &amp; Modeling<a class="anchor-link" href="#6-&amp;-7.-Feature-Scaling-&amp;-Modeling">&#182;</a></h3><p>Note: there are nuanced differences between very similar package functions in R vs. Python's sklearn. Please make sure you are reading the documentation for the respective package thoroughly to understand what's happening when you use them. <strong>Some of these nuanced differences explain why you'll get very different results using R's caret &amp; various models vs. Python's sklearn package.</strong></p>
 <p>Reference for putting it all together</p>
 <ul>
 <li><a href="https://scikit-learn.org/stable/tutorial/statistical_inference/putting_together.html">https://scikit-learn.org/stable/tutorial/statistical_inference/putting_together.html</a></li>
@@ -14462,27 +14461,27 @@ best score:  0.5099904012863419
   <tbody>
     <tr>
       <th>mean_fit_time</th>
-      <td>0.122183</td>
-      <td>0.170782</td>
-      <td>0.179299</td>
+      <td>0.148153</td>
+      <td>0.190529</td>
+      <td>0.202432</td>
     </tr>
     <tr>
       <th>std_fit_time</th>
-      <td>0.00768792</td>
-      <td>0.0111142</td>
-      <td>0.0171796</td>
+      <td>0.00481926</td>
+      <td>0.0155914</td>
+      <td>0.0144757</td>
     </tr>
     <tr>
       <th>mean_score_time</th>
-      <td>0.00326614</td>
-      <td>0.00352864</td>
-      <td>0.00279737</td>
+      <td>0.00431609</td>
+      <td>0.0040329</td>
+      <td>0.00361676</td>
     </tr>
     <tr>
       <th>std_score_time</th>
-      <td>0.000141773</td>
-      <td>0.000728061</td>
-      <td>0.000135058</td>
+      <td>0.000951393</td>
+      <td>0.000728139</td>
+      <td>0.000433077</td>
     </tr>
     <tr>
       <th>param_rfreg__n_estimators</th>

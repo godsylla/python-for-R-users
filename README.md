@@ -1,11 +1,18 @@
 # python-for-R-users
-This repository is intended for a high level overview of python for R users, data cleaning, preprocessing, modeling.
+Date: September 9, 2019
+Author: Sylvia Tran
+
+The work in this repository was designed for the LA R Users Group. 
+This repository is intended for a high level overview of python for R users, data cleaning, preprocessing, modeling. 
+![](https://github.com/laRusers/logos/blob/master/larusers_hex_general.png?raw=true)
 
 **Scope**
 - The code provided uses Python 3.7.0
 - Environment setup is not addressed as part of the scope of this repository)
 - The work was done on a MacOS, therefore nuances pertaining to Windows OS are not addressed
 - The use of RandomForest is demonstrative, and neither intended to optimize hyperparameters nor minimize loss
+
+______________________________________________________________________________________________________________________________
 
 ### This Repository:
 > * assets (pictures and .mov files for screen capture)
@@ -22,6 +29,8 @@ Can be accessed through **RStudio** using the Terminal by
 ![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2015_25_32.gif?raw=true)
 
 **B. Jupyter ipynb (interactive Python notebook)**
+
+______________________________________________________________________________________________________________________________
 
 ### Content
 1. Importing Packages

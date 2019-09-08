@@ -5,7 +5,7 @@ Author: Sylvia Tran
 The work in this repository was designed for the LA R Users Group. 
 This repository is intended for a high level overview of python for R users, data cleaning, preprocessing, modeling. 
 
-![](https://github.com/laRusers/logos/blob/master/larusers_hex_general.png?raw=true)
+![](https://github.com/laRusers/logos/blob/master/larusers_hex_general.png?raw=true) ![](https://miro.medium.com/max/538/1*3rikDRz9MtRrLqBIT3I-rQ.jpeg)
 
 **Scope**
 - The code provided uses Python 3.7.0

@@ -27,7 +27,7 @@ Can be accessed through **RStudio** using the Terminal by
 > 1. starting from the working directory of choice 
 > 2. `$ ipython`
 
-![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2015_58_07.gif?raw=true)
+![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2021_07_21.gif?raw=true)
 
 **B. Jupyter ipynb (interactive Python notebook)**
 

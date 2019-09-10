@@ -9,7 +9,7 @@ This repository is intended for a high level overview of python for R users, dat
 
 **Scope**
 - The code provided uses Python 3.7.0
-- Environment setup is not addressed as part of the scope of this repository)
+- Environment setup is not addressed as part of the scope of this repository
 - The work was done on a MacOS, therefore nuances pertaining to Windows OS are not addressed
 - The use of RandomForest is demonstrative, and neither intended to optimize hyperparameters nor minimize loss
 - **Forthcoming:** R <-> Python Cheatsheet to be added to this repository in the coming weeks in the `./slides-etc/` directory

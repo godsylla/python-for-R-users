@@ -12,7 +12,7 @@ This repository is intended for a high level overview of python for R users, dat
 - Environment setup is not addressed as part of the scope of this repository)
 - The work was done on a MacOS, therefore nuances pertaining to Windows OS are not addressed
 - The use of RandomForest is demonstrative, and neither intended to optimize hyperparameters nor minimize loss
-
+- **Forthcoming:** R <-> Python Cheatsheet to be added to this repository in the coming weeks in the `./slides-etc/` directory
 ______________________________________________________________________________________________________________________________
 
 ### This Repository:
@@ -27,7 +27,7 @@ Can be accessed through **RStudio** using the Terminal by
 > 1. starting from the working directory of choice 
 > 2. `$ ipython`
 
-![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2015_58_07.gif?raw=true)
+![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2021_07_21.gif?raw=true)
 
 **B. Jupyter ipynb (interactive Python notebook)**
 

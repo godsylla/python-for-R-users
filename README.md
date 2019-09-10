@@ -30,7 +30,8 @@ Can be accessed through **RStudio** using the Terminal by
 ![](https://github.com/godsylla/python-for-R-users/blob/master/assets/python-for-R-users-screencapture.2019-09-08%2021_07_21.gif?raw=true)
 
 **B. Jupyter ipynb (interactive Python notebook)**
-
+> 1. after downloading the repo, make a copy of the .ipynb file in the /notebooks folder 
+> 2. take apart the code line by line, or go to town on trying different things on the play dataset
 ______________________________________________________________________________________________________________________________
 
 ### Content
